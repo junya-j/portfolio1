@@ -1,0 +1,413 @@
+@import "common";
+@import "header";
+@import "footer";
+
+// ブレークポイント
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+
+    @media #{map-get($breakpoints, $breakpoint)} {
+  
+      @content;
+    }
+}
+
+.hero{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-image: url(../image/about-hero-bg.png);
+        background-size: cover;
+        width: 1100px;
+        height: 387px;
+    }
+
+    &::after{
+        position: absolute;
+        content: "";
+        z-index: -2;
+        top: 0;
+        right: 0;
+        background-color: #222222;
+        width: 780px;
+        height: 464px;
+    }
+
+    .bg{
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        width: 1100px;
+        height: 387px;
+    }
+
+    .container{
+        padding-top: 155px;
+        padding-bottom: 192px;
+      
+
+        .hero-content{
+            width: 430px;
+            margin-left: auto;
+            color: #ffffff;
+
+            .section-title{
+                font-size: 72px;
+            }
+
+            .hero-text{
+                font-family: "Noto Sans JP";
+                font-size: 20px;
+            }
+        }
+    }
+
+    @include mq('tab'){
+
+        &::before{
+            width: 587px;
+            height: 529px;
+            background-position: center;
+        }
+
+        &::after{
+            width: 406px;
+            height: 615px;
+        }
+
+        .bg{
+            width: 587px;
+            height: 529px;
+        }
+        
+        .container{
+            padding-top: 220px;
+            padding-bottom: 278px;
+
+            .hero-content{
+                width: 312px;
+                margin-left: 358px;
+
+                .section-title{
+                    font-size: 52px;
+                    letter-spacing: 3px;
+                }
+
+                .hero-text{
+                    font-size: 16px;
+                }
+            }
+        }
+
+    }
+
+    @include mq('sp'){
+
+        &::before{
+            width: 287px;
+            height: 387px;
+        }
+
+        &::after{
+            width: 198px;
+            height: 449px;
+        }
+
+        .bg{
+            width: 287px;
+            height: 387px;
+        }
+
+        .container{
+            padding-top: 149px;
+            padding-bottom: 212px;
+            width: 100%;
+
+            .hero-content{
+                width: 289px;
+                margin-left: 57px;
+
+                .section-title{
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// hero
+
+main{
+    padding-top: 120px;
+    padding-bottom: 56px;
+    color: #333333;
+
+    @include mq('tab'){
+        padding: 80px 0;
+    }
+    
+    // vision
+    .vision{
+
+        .container{
+            padding-left: 226px;
+            padding-bottom: 120px;
+
+            .vision-title{
+                margin: 30px 0;
+                font-size: 24px;
+                font-weight: bold;
+                font-family: "游ゴシック体", YuGothic;
+            }
+
+            .vision-text{
+                font-size: 16px;
+                font-weight: 400;
+                font-family: "Noto Sans JP";
+                margin-bottom: 40px;
+                line-height: 28px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @include mq('tab'){
+
+            .container{
+                width: 415px;
+                padding-left: 150px;
+                margin: 0;
+     
+            }
+        }
+
+        @include mq('sp'){
+
+            .container{
+                width: 345px;
+                padding-left: 0;
+                margin: 0 auto;
+                padding-bottom: 80px;
+
+
+                .vision-text{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    // vision
+
+    // message  
+    .message{
+
+        .container{
+            padding-top: 144px;
+            padding-bottom: 120px;
+            position: relative;
+
+            img{
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top:0;
+            }
+
+            .message-wrapper{
+                width: 770px;
+                box-sizing: border-box;
+                background-color: #F0F0F0;
+                color: #333333;
+                padding: 120px 185px 90px 185px;
+                margin-left: auto;
+
+                .section-title{
+                    margin-bottom: 30px;
+                }
+
+                .message-text{
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: "Noto Sans JP";
+                    margin-bottom: 30px;
+                    line-height: 32px;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @include mq('tab'){
+
+
+            .container{
+                padding-top: 130px;
+           
+
+                img{
+                    left: 30px;
+                    width: 320px;
+                    height: 216px;
+                }
+
+                .message-wrapper{
+                    margin-left: 244px;
+                    padding: 110px 39px 80px 40px;
+                    width: 494px;
+                }
+            }
+        }
+
+        @include mq('sp'){
+
+            .container{
+                padding-bottom: 80px;
+
+                img{
+                    width: 340px;
+                    height: 230px;
+                    left: 0;
+                }
+
+                .message-wrapper{
+                    padding: 125px 28px 80px 28px;
+                    width: 345px;
+                    margin: 0 auto;
+
+                    .message-text{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+
+    }
+    // message
+
+    // company
+    .company{
+
+        .container{
+            
+            .section-title{
+                margin-bottom: 30px;
+            }
+
+            .company-content{
+                border-top: 1px solid #DDDDDD;
+
+                .company-list{
+                    width: 800px;
+                    margin-left: auto;
+                    margin-bottom: 114px;
+
+                    .company-item{
+
+                        dl{
+                            display: flex;
+                            padding: 20px 0;
+
+                            border-bottom: 1px solid #DDDDDD;
+
+                            dt{
+                                width: 80px;
+                                margin-right: 64px;
+                                font-family: "游ゴシック体", YuGothic;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+
+                            dd{
+                            
+                                font-family: "游ゴシック体", YuGothic;
+                                font-size: 16px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include mq('tab'){
+
+            .container{
+                width: 708px;
+
+                .company-content{
+                    
+                    .company-list{
+                       margin-left: 0;
+                        width: 100%;
+                        margin-bottom: 40px;
+                        padding-left: 30px;
+                        box-sizing: border-box;
+
+                        .company-item{
+                            width: 100%;
+                        }
+                    }
+
+                    iframe{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @include mq('sp'){  
+
+            .container{
+                width: 345px;
+                margin: 0 auto;
+
+                .company-content{
+
+                    .company-list{
+                        padding-left: 0;
+
+                        .company-item{
+
+                            dl{
+
+                                dt,dd{
+                                    font-size: 14px;
+                                }
+
+                                dl{
+                                    width: 70px;
+                                    margin-right: 93px;
+                                }
+                            }
+                        }
+                    }
+
+                    iframe{
+                        height: 470px;
+                    }
+                }
+            }
+        }   
+    }
+    // company
+}

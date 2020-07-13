@@ -1,0 +1,12 @@
+footer {
+  background-color: #525252;
+}
+
+footer .copyright {
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  line-height: 60px;
+}

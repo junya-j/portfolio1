@@ -1,0 +1,131 @@
+.drawer-open header .header-nav .drawer-hamburger {
+  right: 100px;
+}
+
+.drawer-open header .header-nav .drawer-hamburger .drawer-hamburger-icon {
+  background-color: transparent;
+}
+
+.drawer-open header .header-nav .drawer-hamburger .drawer-hamburger-icon::before {
+  transform: rotate(30deg);
+  top: -1px;
+}
+
+.drawer-open header .header-nav .drawer-hamburger .drawer-hamburger-icon::after {
+  transform: rotate(-30deg);
+  top: 0;
+}
+
+.drawer-open header .header-nav .drawer-nav {
+  width: 520px;
+}
+
+.drawer-open header .header-nav .drawer-nav .drawer-menu {
+  margin-top: 180px;
+  text-align: center;
+}
+
+.drawer-open header .header-nav .drawer-nav .drawer-menu img {
+  display: inline-block;
+}
+
+.drawer-open header .header-nav .drawer-nav .drawer-menu .drawer-brand, .drawer-open header .header-nav .drawer-nav .drawer-menu .drawer-menu-item {
+  color: #FFFFFF;
+}
+
+.drawer-open header .header-nav .drawer-nav .drawer-menu .drawer-menu-item {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 54px;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .drawer-open header .header-nav .drawer-hamburger {
+    right: 60px;
+  }
+  .drawer-open header .header-nav .drawer-nav {
+    width: 100%;
+  }
+  .drawer-open header .header-nav .drawer-nav .drawer-menu {
+    margin-top: 100px;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+header .header-nav {
+  padding: 30px 58px;
+  padding-right: 58px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header-nav .drawer-hamburger {
+  right: 100px;
+  top: 18px;
+}
+
+header .header-nav .drawer-hamburger .drawer-hamburger-icon {
+  background-color: #FFFFFF;
+  z-index: 10000;
+}
+
+header .header-nav .drawer-hamburger .drawer-hamburger-icon::before, header .header-nav .drawer-hamburger .drawer-hamburger-icon::after {
+  background-color: #fff;
+}
+
+header .header-nav .drawer-hamburger .drawer-hamburger-icon::before {
+  top: -6px;
+}
+
+header .header-nav .drawer-hamburger .drawer-hamburger-icon::after {
+  top: 6px;
+}
+
+header .header-nav .drawer-hamburger .menu {
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  z-index: 1000;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header .header-nav .drawer-nav {
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+header .header-nav .drawer-nav .drawer-menu img {
+  display: none;
+}
+
+@media screen and (max-width: 1109px) {
+  header .header-nav {
+    padding: 34px 30px;
+  }
+  header .header-nav .header-logo {
+    width: 189px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header .header-nav {
+    padding: 20px 15px;
+  }
+  header .header-nav .drawer-hamburger {
+    right: 60px;
+    top: 5px;
+  }
+}

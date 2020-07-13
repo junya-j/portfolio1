@@ -1,0 +1,70 @@
+// レイアウト幅
+$layout-width-inner:1110px;
+
+// ブレークポイント
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+
+    @media #{map-get($breakpoints, $breakpoint)} {
+  
+      @content;
+    }
+}
+
+// 基本設定＋共通部分の設定
+*{  
+    margin: 0;
+    padding: 0;
+
+    a{
+      text-decoration: none;
+    }
+
+    li{
+      list-style: none;
+    }
+
+    .container{
+      width: 1110px;
+      max-width: 100%;
+      margin: 0 auto;
+
+    }
+
+    .section-title{
+      font-size: 32px;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+
+      @include mq('sp'){
+          font-size: 28px;
+      }
+    }
+
+    .btn-link{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        display: inline-block;
+        text-transform: uppercase;
+        width: 160px;
+        line-height: 36px;
+        font-size: 12px;
+        background-color:#000000;
+        color: #FFFFFF;
+        text-align: center;
+        transition: all 0.3s ease 0s;
+
+        &:hover{
+          background-color: #E73033;
+          color: #ffffff;
+        }
+    }
+}

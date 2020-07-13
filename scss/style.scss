@@ -1,0 +1,505 @@
+@import "common";
+@import "header";
+@import "footer";
+
+// ブレークポイント
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+
+    @media #{map-get($breakpoints, $breakpoint)} {
+  
+      @content;
+    }
+}
+
+
+.hero{
+    position: relative;
+    color: #FFFFFF;
+
+    &::before{
+        z-index: -1;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        background-image: url(../image/hero-bg.png);
+        background-size: cover;
+        width: 1180px;
+        height: 640px;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    &::after{
+        z-index: -2;
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        background-color:#222222;
+        height: 740px;
+        width: 780px;
+    }
+
+    .bg{
+        z-index: -1;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 1180px;
+        height: 640px;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    .container{
+        padding-top: 160px;
+        padding-bottom: 257px;
+        font-family: 'Montserrat', sans-serif;
+        
+        .hero-wrapper{
+            margin-left: auto;
+            width: 292px;
+            margin-left: auto;
+
+            .hero-text{
+                font-weight: 700;
+                font-size: 20px;
+                margin-bottom: 10px;
+
+                    p{
+                        line-height: 25px;
+                    }
+            }
+
+            .hero-title{
+                font-weight: 800;
+                font-size: 72px;
+            }
+        }
+    }
+
+    @include mq('tab'){
+
+        &::before{
+            width: 600px;
+            height: 890px;
+            background-position: center;
+        }
+
+        &::after{
+            width: 562px;
+            height: 1024px;
+        }
+
+        .bg{
+            width: 600px;
+            height: 890px;
+        }
+
+        .container{
+            width: 590px;
+            padding-top: 333px;
+            padding-bottom: 428px;
+
+            .hero-wrapper{
+                width: 245px;
+
+                .hero-text{
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                       
+                }
+    
+                .hero-title{
+                    font-size: 56px;
+                }
+            }
+        }
+    }
+
+    @include mq('sp'){
+        
+        &::before{
+            width: 287px;
+            height: 580px;
+            background-position: center;
+        }
+
+        &::after{
+            width: 283px;
+            height: 667px;
+        }
+
+        .bg{
+            width: 287px;
+            height: 580px;
+        }
+
+        .container{
+            padding-top: 178px;
+            padding-bottom: 225px;
+        }
+    }
+
+} //hero
+
+main{
+    margin-top: 120px;
+
+    @include mq('tab'){
+        margin-top: 80px;
+    }
+
+    // about
+    .about{
+
+        .container{
+            background-image: url(../image/about-bg.png);
+            background-size: cover;
+            padding: 110px 0 110px 50px;
+            box-sizing: border-box;        
+
+            .about-box{
+                width: 590px;
+                background-color: #fff;
+                padding: 50px 30px;
+                box-sizing: border-box;
+
+                .section-title{
+                    margin-bottom: 30px;
+                }
+
+                .about-text{
+                    margin-bottom: 30px;
+                    font-size: 16px;
+                    font-family: 'Noto Sans JP', sans-serif;
+                    line-height: 32px;
+                }
+            }
+        } //container
+
+        @include mq('tab'){
+            .container{
+                padding: 60px 90px;
+                
+                .about-box{
+
+                    .about-text{
+                        font-size: 14px;
+                    }
+                }
+                
+            }
+        }
+
+        @include mq('sp'){
+
+            .container{
+                padding: 50px 15px;
+                width: 345px;
+                margin: 0;
+                box-sizing: initial;;               
+
+                .about-box{
+                    width: 100%;
+                    padding: 50px 15px 50px 30px;
+
+                    .about-text{
+
+                    }
+                }
+            }
+        }
+
+    }
+    // about
+
+    // introduction
+    .introduction{
+        position: relative;
+
+
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 777px;
+            background-color: #F0F0F0;
+            top: -100px;
+            left: 0;
+            z-index: -100;
+        }
+
+        .container{
+            padding-top: 80px;
+            padding-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            
+       
+            
+
+            .section-title{
+                margin-bottom: 30px;
+            }
+
+            img{
+                vertical-align: bottom;
+            }
+
+            .introduction-text{
+                margin: 30px 0;
+                font-size: 16px;
+                font-family: "游ゴシック体", YuGothic;
+                font-weight: 500;
+            }
+
+        }
+
+        @include mq("tab"){
+            background-color: #F0F0F0;
+
+            &::before{
+               display: none;
+            }
+
+            .container{
+                display: block;
+                padding-top: 60px;
+                padding-left: 30px;
+                padding-bottom: 40px;
+                width: 520px;
+                margin: 0;
+
+                img{
+                    width: 100%;
+                }
+
+
+                .works{
+                    margin-bottom: 80px;
+                }
+            }
+        }
+
+        @include mq('sp'){
+
+            .container{
+                width: 345px;
+                padding-top: 40px;
+                padding-left: 0;
+                margin: 0 auto;
+
+                .works{
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+    //introduction
+
+    // topics
+    .topics{
+
+        .container{
+            padding: 60px 0;
+        }
+
+        .section-title{
+            margin-bottom: 32px;
+        }
+
+        .topics-contents{
+            width: 700px;
+            margin-left: auto;
+           
+
+            .topics-list{
+                
+                .topics-item{
+                    margin-bottom: 30px;
+                    border-bottom: 1px solid #DDDDDD;
+                    transition: all .3s ease 0s;
+
+                    &:hover{
+                        background-color: rgba(0,0,0,0.8);
+
+                        .topics-text{
+                            color: #FFFFFF;
+                        }
+                    }
+
+                    time{
+                        font-size: 10px;
+                        color: #CECECE;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 500;
+                        letter-spacing: 0.1em;
+                    }
+
+                    .topics-text{
+                        font-family: "游ゴシック体", YuGothic;
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #333333;
+                        line-height: 45px;
+                    }
+                }
+            }
+
+            .btn-wrapper{
+                text-align: right;
+
+                .btn-link{
+                    margin-left: auto;
+                }
+            }
+        }
+
+
+        @include mq('tab'){
+
+            .container{
+                width: 520px;
+                padding: 40px 0;
+                width: 700px;
+
+                .btn-wrapper{
+                    text-align: left;
+                }
+            }
+        }
+
+        @include mq('sp'){
+
+            .container{
+                width: 343px;
+
+                .topics-contents{
+                    width: 100%;
+
+                    .topics-list{
+                
+                        .topics-item{
+                            margin-bottom: 22px;
+
+                            &:last-child{
+                                margin-bottom: 30px;
+                            }
+    
+                            .topics-text{
+                                font-size: 12px;
+                                line-height: 20px;
+                                padding-bottom: 10px;
+                                letter-spacing: .8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //topics
+
+    // contact
+    .contact{
+        background-color: #F2F2F2;
+
+        .container{
+            padding-top: 60px;
+            padding-bottom: 120px;
+            display: flex;
+            justify-content: space-between;
+
+            img{
+                order: 2;
+            }
+
+            .contact-content{
+                padding-top: 72px;
+                margin-right: 80px;
+
+                .section-title{
+                    margin-bottom: 30px;
+                }
+
+                .contact-text{
+                    letter-spacing: 0.5px;  
+                    margin-bottom: 30px;
+                }
+            }
+
+          
+        }
+
+        @include mq('tab'){
+
+            .container{
+                display: block;
+                padding-top: 40px;
+                padding-bottom: 80px;
+                padding-left: 30px;
+                width: 520px;
+                margin: 0;
+
+                img{
+                    width: 520px;
+                    vertical-align: bottom;
+                }
+
+                .contact-content{
+                    padding: 30px 0 0 0;
+                   margin-right: 0;
+                    
+    
+                    .contact-text{
+                        margin: 30px 0;
+                        font-family: "游ゴシック体", YuGothic;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 32px;
+                    }
+                }
+
+            }
+
+        }
+
+        @include mq('sp'){
+
+            .container{
+                width: 343px;
+                padding-left: 0;
+                padding-bottom: 40px;
+                margin: 0 auto;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    // contact
+
+
+}//main
+
+footer{
+    background-color: #525252;
+
+    .copyright{
+        color: #FFFFFF;
+        text-align: center;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        line-height: 60px;
+    }
+}

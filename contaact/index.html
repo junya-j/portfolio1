@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>クリスタ模写</title>
+    <!-- Goggle font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- style.cssの読み込み -->
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="../css/drawer.css">
+    <!-- jquery & iScroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+</head>
+
+ <body class="drawer drawer--right">
+    <!-- ヘッダー -->
+    <header>
+        <nav class="header-nav">
+            <a href="../index.html"><img src="../image/site-logo.png" alt="DIGSMILEのロゴ" class="header-logo"></a>
+            <button type="button" class="drawer-hamburger drawer-toggle ">
+                <span class="drawer-hamburger-icon"></span>
+                <span class="menu">menu</span>
+            </button>
+            <nav class="drawer-nav">
+                <ul class="drawer-menu">
+                    <li><img src="../image/menu-icon.png" alt="DIGSMILEのDのロゴ"></li>
+                    <li><a class="drawer-menu-item" href="../about/index.html">about us</a></li>
+                    <li><a class="drawer-menu-item" href="#">worls</a></li>
+                    <li><a class="drawer-menu-item" href="#">culture</a></li>
+                    <li><a class="drawer-menu-item" href="#">topics</a></li>
+                    <li><a class="drawer-menu-item" href="../contaact/index.html">contact</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+    <!-- ヘッダー -->
+
+     <!-- hero -->
+     <section class="hero">
+        <!-- 背景画像を暗くする -->
+        <div class="bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="section-title">contact</h2>
+                <p class="hero-text">お問い合わせ</p>
+            </div>
+        </div>
+    </section>
+    <!-- hero -->
+
+    <!-- contact -->
+
+    <div class="contact">
+        <div class="container">
+            <p class="announce">ご依頼やご相談についてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。送付いただいた内容を確認の上、担当者からご連絡させていただきます。</p>
+            <form action="#" method="POST">
+                <table>
+                    <tr> <!-- 種類-->
+                        <td>
+                            <p class="radio-label label">お問い合わせ種別<span class="required">必須</span></p>
+                        </td>
+                        <td class="radio-row">
+                            <label class="radio-btn" for="request"><input class="radio-test" id="request" type="radio" name="request"><span>制作依頼</span></label>
+                            <label class="radio-btn" for="adoption"><input class="radio-test" id="adoption" type="radio" name="adoption"><span>採用</span></label>
+                            <label class="radio-btn" for="ir"><input class="radio-test" id="ir" type="radio" name="ir"><span>IR</span></label>
+                            <label class="radio-btn" for="other"><input class="radio-test" id="other" type="radio" name="other"><span>その他</span></label>
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 会社名-->
+                        <td>
+                            <p class="label">会社名・団体名</p>
+                        </td>
+                        <td>
+                            <label for="corporate-name"><input type="text" class="text-box" id="corporate-name" name="corporate-name"></label> 
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 名前-->
+                        <td>
+                            <p class="label">お名前<span class="required">必須</span></p>
+                        </td>
+                        <td>
+                            <label for="name"><input type="text" class="text-box" id="name" name="name"></label> 
+                        </td>
+                    </tr>
+
+                    <tr> <!-- メールアドレス-->
+                        <td>
+                            <p class="label">メールアドレス<span class="required">必須</span></p>
+                        </td>
+                        <td>
+                            <label for="email"><input type="email" class="text-box" id="email"  name="email"></label>
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 電話番号-->
+                        <td>
+                            <p class="label">電話番号</p>
+                        </td>
+                        <td>
+                            <label for="number"><input type="tel" class="text-box" id="number"  name="number"></label>
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 問い合わせ内容-->
+                        <td>
+                            <p class="label" >お問い合わせ内容<span class="required">必須</span></p>
+                        </td>
+                        <td>
+                            <label for="inquiry"><textarea name="inquiry"  cols="30" rows="10" class="textarea" id="inquiry"></textarea></label>
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 個人情報保護法-->
+                        <td>
+                            <p class="label privacy-policy">PRIVACY POLICY</p>
+                        </td>
+                        <td>
+                            <p class="privacy-text">個人情報保護方針<br>
+                                株式会社DIGSMILE（以下、当社）では、個人情報の重要性を認識し、以下の基準に従って、適切な管理、保護に努めます。<br>
+                                
+                                1.個人情報の収集、利用<br>
+                                当社では、お客様との取引、サービスの提供のために個人情報を適法に収集し、収集した目的の範囲内で、個人情報を利用いたします。<br>
+                                
+                                2.個人情報の第三者への開示と提供<br>
+                                収集したお客様の個人情報は、法的な要請等によらない限り、お客様の承諾を得ない第三者に対して提供・開示はいたしません。<br>
+                                業務の都合上、業務委託先に個人情報を提供する場合は、機密保持契約等によって業務委託先に個人情報保護を義務付けるとともに、業務委託先が適切に個人情報を取り扱うように管理いたします。<br>
+                                
+                                3.個人情報の保護<br>
+                                当社では、個人情報の紛失、破壊、改ざん、不正アクセス、および漏えい等を防止するため、適切な対策を行います。<br>
+                                
+                                4.法令および関連規範の遵守<br>
+                                当社は、個人情報の取り扱いに関して、個人情報保護法をはじめとする個人情報に関する法令および関連する規範を遵守します。個人情報保護方針<br>
+                                株式会社DIGSMILE（以下、当社）では、個人情報の重要性を認識し、以下の基準に従って、適切な管理、保護に努めます。<br>
+                                
+                                </p>
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 同意-->
+                        <td class="check-row">
+                            <label for="agree"><input type="checkbox" class="check-btn" id="agree"  name="agree"><span class="check-text">個人情報の取り扱いについて同意のうえ送信します。</span></label>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr> <!--送信 -->    
+                        <td>
+                            <label for="submit"><input  name="submit"  type="submit" class="submit" id="submit"  value="送信"></label>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <!-- contact -->
+
+    <!-- footer -->
+    <footer>
+        <p class="copyright">©2018 DIGSMILE INC.</p>
+    </footer>
+    <!-- footer -->
+
+    <!-- drawer.js -->
+    <script src="../js/script.js"></script>
+    <script src="../js/drawer.js"></script>
+
+
+</body>
+
+</html>
